@@ -1,0 +1,13 @@
+# Таким образом мы явно задаем стартовую конфиурацию нашему стартеру
+# Указанные здесь классы конфигураций будут автоматически конфигурироваться
+# в приложении при запуске
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  org.example.ZooStarter.ZooConfiguration,\
+  org.example.ZooStarter.SeasonConfigurator
+
+# Указываем какие классы будут работать при инициализации конткста - гораздо раньше, чем в случае автоконфигурации
+# Здесь надо настраивать context
+org.springframework.context.ApplicationContextInitializer=org.example.ZooStarter.AppContextInitializer
+
+# Указываем, какие классы будут работать до инициализации контекста - здесь можно настраивать Environment
+org.springframework.boot.env.EnvironmentPostProcessor=org.example.ZooStarter.EnvPostProcessor
